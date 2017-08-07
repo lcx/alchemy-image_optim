@@ -3,6 +3,7 @@
 .ruby-version
 *.gem
 *.rbc
+.idea
 log/*.log
 pkg/
 spec/dummy/db/*.sqlite3
