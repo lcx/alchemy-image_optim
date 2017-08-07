@@ -10,7 +10,7 @@ module Alchemy::ImageOptim
     end
 
     it "is configurable" do
-      expect(Alchemy::ImageOptim.configuration.raise_errors).to be_false
+      expect(Alchemy::ImageOptim.configuration.raise_errors).to be false
     end
   end
 end
