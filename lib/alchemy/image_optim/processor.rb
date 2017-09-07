@@ -8,7 +8,7 @@ module Alchemy
           begin
             if (optimized = ::ImageOptim.new.optimize_image(content.path).presence)
               optimized.copy(tempfile.path)
-              content.update tempfile
+              content.update tempfile.read
             end
           rescue => e
             if Alchemy::ImageOptim.configuration.raise_errors

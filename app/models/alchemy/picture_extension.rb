@@ -5,7 +5,7 @@ Alchemy::Picture.class_eval do
     after_assign do |p|
       resize = Alchemy::Config.get(:preprocess_image_resize)
       p.thumb!(resize) if resize.present?
-      p.process!(:optimize)
+      p.process!(:optimize) unless p.mime_type.match /image\/png/
       p.convert!('-strip -interlace Plane') if p.mime_type.match /image\/jpeg/
     end
   end
